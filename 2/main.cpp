@@ -4,27 +4,27 @@
 
 using namespace std;
 
-class complex {
+class Complex {
 private:
-    string item;
+    string str;
     string end;
 public:
-    complex(string item) {
-        this->item = item;
+    Complex(string item) {
+        this->str = item;
     }
     string showitem() {
-        return item;
+        return str;
     }
-    string ToString() {
+    string ConvertFromSymbolic() {
         string w;
         char string1;
         char string2;
         int dot = 0;
         int zeros;
         int zeros_final;
-        for (int x = 0; x < item.length(); x++) {
-            string1 = item[x];
-            string2 = item[x + 1];
+        for (int x = 0; x < str.length(); x++) {
+            string1 = str[x];
+            string2 = str[x + 1];
             if (string1 == '.') { dot = x; }
             else if (string1 == 'M') { zeros = 6; break; }
             else if (string1 == 'B') { zeros = 9; break; }
@@ -37,7 +37,7 @@ public:
             else w = w + string1;
         }
         if (dot != 0) {
-            zeros_final = item.length() - dot - 2;
+            zeros_final = str.length() - dot - 2;
             zeros = zeros - zeros_final;
         }
         for (int x = 0; x < zeros; x++) {
@@ -51,18 +51,16 @@ public:
     }
 };
 
-
-
 int main(){
 
-    complex *n1=new complex("4M");
-    cout << n1->ToString() << endl;
+    Complex *n1=new Complex("4M");
+    cout << n1->ConvertFromSymbolic() << endl;
 
-    complex *n2=new complex ("54T");
-    cout << n2->ToString() << endl;
+    Complex *n2=new Complex ("54T");
+    cout << n2->ConvertFromSymbolic() << endl;
 
-    complex *n3=new complex("5.434B");
-    cout << n3->ToString() << endl;
+    Complex *n3=new Complex("5.434B");
+    cout << n3->ConvertFromSymbolic() << endl;
 
 
     return 1;

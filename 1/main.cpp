@@ -3,91 +3,38 @@
 
 using namespace std;
 
-unsigned long long int pow(unsigned long long int base, int one)
-{
-    unsigned long long int result = 1ULL;
-    while (one)
-    {
-        if (one & 1)
-        {
-            result *= (unsigned long long int)base;
-        }
-        one >>= 1;
-        base *= base;
+string ConvertFromSymbolic(string str) {
+    string w;
+    char string1;
+    char string2;
+    int dot = 0;
+    int zeros;
+    int zeros_final;
+    for (int x = 0; x < str.length(); x++) {
+        string1 = str[x];
+        string2 = str[x + 1];
+        if (string1 == '.') { dot = x; }
+        else if (string1 == 'M') { zeros = 6; break; }
+        else if (string1 == 'B') { zeros = 9; break; }
+        else if (string1 == 'T') { zeros = 12; break; }
+        else if (string1 == 'Q' && string2 == 'a') { zeros = 15; break; }
+        else if (string1 == 'Q' && string2 == 'i') { zeros = 18; break; }
+        else if (string1 == 'S' && string2 == 'x') { zeros = 21; break; }
+        else if (string1 == 'S' && string2 == 'p') { zeros = 24; break; }
+        else if (string1 == 'O' && string2 == 'c') { zeros = 27; break; }
+        else w = w + string1;
     }
-    return result;
+    if (dot != 0) {
+        zeros_final = str.length() - dot - 2;
+        zeros = zeros - zeros_final;
+    }
+    for (int x = 0; x < zeros; x++) {
+        w = w + "0";
+    }
+
+    return w;
 }
 
-
-string ConvertFromSymbolic(string str)
-{
-    string str1;
-    string str2;
-    string str3;
-
-    bool more_digits = false;
-
-    for (int i = 0; i < str.length(); i++)
-    {
-
-        if (isdigit(str[i]) && !more_digits)
-        {
-            str1 += str[i];
-        }
-        else
-            if (i != 0)
-            {
-                if (str[i] == '.' && !more_digits)
-                {
-                    str1 += str[i];
-                }
-                else
-                {
-                    str2 += str[i];
-                    more_digits = true;
-                }
-
-            }
-    }
-
-    double int1 = stod(str1);
-
-    if (str2 == "M"){
-        str3 = to_string((unsigned long long int)(int1 * pow(10, 6)));
-        return str3;
-    }
-    else if (str2 == "B"){
-        str3 = to_string((unsigned long long int)(int1 * pow(10, 9)));
-        return str3;
-    }
-    else if (str2 == "T"){
-        str3 = to_string((unsigned long long int)(int1 * pow(10, 12)));
-        return str3;
-    }
-    else if (str2 == "Qa"){
-        str3 = to_string((unsigned long long int)(int1 * pow(10, 12))) + to_string(pow(10, 3)).erase(0, 1);
-        return str3;
-    }
-    else if (str2 == "Qi"){
-        str3 = to_string((unsigned long long int)(int1 * pow(10, 12))) + to_string(pow(10, 6)).erase(0, 1);
-        return str3;
-    }
-    else if (str2 == "Sx"){
-        str3 = to_string((unsigned long long int)(int1 * pow(10, 12))) + to_string(pow(10, 9)).erase(0, 1);
-        return str3;
-    }
-    else if (str2 == "Sp"){
-        str3 = to_string((unsigned long long int)(int1 * pow(10, 12))) + to_string(pow(10, 12)).erase(0, 1);
-        return str3;
-    }
-    else if (str2 == "Oc"){
-        str3 = to_string((unsigned long long int)(int1 * pow(10, 12))) + to_string(pow(10, 16)).erase(0, 1);
-        return str3;
-    }
-    else{
-        return 0;
-    }
-}
 int main(){
 
     cout << ConvertFromSymbolic("4M") << endl;

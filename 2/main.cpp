@@ -9,8 +9,8 @@ private:
     string str;
     string end;
 public:
-    Complex(string item) {
-        this->str = item;
+    Complex(string str) {
+        this->str = str;
     }
     string showitem() {
         return str;

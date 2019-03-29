@@ -6,8 +6,16 @@ using namespace std;
 
 class Convert {
 
+private:
+    string str;
+
 public:
-    string ConvertFromSymbolic(string str) {
+
+    Convert(string str) {
+        this->str = str;
+    }
+
+    string ConvertFromSymbolic() {
         string w;
         char string1;
         char string2;
@@ -38,20 +46,19 @@ public:
 
         return w;
     }
-private:
-    
+
 };
 
 int main(){
 
-    Convert n1;
-    cout<< n1.ConvertFromSymbolic("4M")<<endl;
+    Convert n1("4M") ;
+    cout<< n1.ConvertFromSymbolic() <<endl;
 
-    Convert n2;
-    cout << n2.ConvertFromSymbolic("54T") << endl;
+    Convert n2("54T") ;
+    cout<< n2.ConvertFromSymbolic() <<endl;
 
-    Convert n3;
-    cout << n3.ConvertFromSymbolic("5.434B") << endl;
+    Convert n3("5.434B") ;
+    cout<< n3.ConvertFromSymbolic() <<endl;
 
 
     return 0;

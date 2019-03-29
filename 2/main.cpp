@@ -12,7 +12,7 @@ public:
     Complex(string str) {
         this->str = str;
     }
-    string showitem() {
+    string showstr() {
         return str;
     }
     string ConvertFromSymbolic() {

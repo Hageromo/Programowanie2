@@ -5,17 +5,9 @@
 using namespace std;
 
 class Convert {
-private:
-    string str;
-    string end;
+
 public:
-    Convert(string str) {
-        this->str = str;
-    }
-    string showstr() {
-        return str;
-    }
-    string ConvertFromSymbolic() {
+    string ConvertFromSymbolic(string str) {
         string w;
         char string1;
         char string2;
@@ -43,25 +35,24 @@ public:
         for (int x = 0; x < zeros; x++) {
             w = w + "0";
         }
-        this->end = w;
+
         return w;
     }
-    string showend() {
-        return end;
-    }
+private:
+    
 };
 
 int main(){
 
-    Convert n1 = Convert("4M");
-    cout<< n1.ConvertFromSymbolic()<<endl;
+    Convert n1;
+    cout<< n1.ConvertFromSymbolic("4M")<<endl;
 
-    Convert n2 = Convert ("54T");
-    cout << n2.ConvertFromSymbolic() << endl;
+    Convert n2;
+    cout << n2.ConvertFromSymbolic("54T") << endl;
 
-    Convert n3 =  Convert("5.434B");
-    cout << n3.ConvertFromSymbolic() << endl;
+    Convert n3;
+    cout << n3.ConvertFromSymbolic("5.434B") << endl;
 
 
-    return 1;
+    return 0;
 }

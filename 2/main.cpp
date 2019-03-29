@@ -4,12 +4,12 @@
 
 using namespace std;
 
-class Complex {
+class Convert {
 private:
     string str;
     string end;
 public:
-    Complex(string str) {
+    Convert(string str) {
         this->str = str;
     }
     string showstr() {
@@ -53,13 +53,13 @@ public:
 
 int main(){
 
-    Complex *n1=new Complex("4M");
+    Convert *n1=new Convert("4M");
     cout << n1->ConvertFromSymbolic() << endl;
 
-    Complex *n2=new Complex ("54T");
+    Convert *n2=new Convert ("54T");
     cout << n2->ConvertFromSymbolic() << endl;
 
-    Complex *n3=new Complex("5.434B");
+    Convert *n3=new Convert("5.434B");
     cout << n3->ConvertFromSymbolic() << endl;
 
 

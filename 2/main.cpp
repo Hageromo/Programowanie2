@@ -53,14 +53,14 @@ public:
 
 int main(){
 
-    Convert *n1=new Convert("4M");
-    cout << n1->ConvertFromSymbolic() << endl;
+    Convert n1 = Convert("4M");
+    cout<< n1.ConvertFromSymbolic()<<endl;
 
-    Convert *n2=new Convert ("54T");
-    cout << n2->ConvertFromSymbolic() << endl;
+    Convert n2 = Convert ("54T");
+    cout << n2.ConvertFromSymbolic() << endl;
 
-    Convert *n3=new Convert("5.434B");
-    cout << n3->ConvertFromSymbolic() << endl;
+    Convert n3 =  Convert("5.434B");
+    cout << n3.ConvertFromSymbolic() << endl;
 
 
     return 1;

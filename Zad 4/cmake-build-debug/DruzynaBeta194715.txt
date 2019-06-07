@@ -1,0 +1,6 @@
+Beta
+Bob,One,156,8,2,5,7,9
+Malcolm,Two,177,7,1,6,3,2
+Francis,Three,168,6,4,2,1,5
+Peter,Four,187,10,3,6,2,9
+Harry,Five,190,8,5,3,10,2

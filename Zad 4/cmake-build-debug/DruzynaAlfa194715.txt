@@ -1,0 +1,6 @@
+Alfa
+Michael,First,180,10,1,5,8,2
+Jacob,Second,190,1,5,9,7,6
+Codi,Third,177,8,2,5,7,9
+Pete,Fourth,169,5,7,10,6,2
+Adam,Fifth,179,1,10,6,4,5
